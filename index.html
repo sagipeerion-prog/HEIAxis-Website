@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HEIAxis - Control Architecture for Student Affairs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: #f8fafc; color: #2d3748; line-height: 1.6; }
+    body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f8fafc; color: #2d3748; line-height: 1.6; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     header { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 80px 0 60px; text-align: center; position: relative; }
     header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.1); }
     header .container { position: relative; z-index: 1; }
     header h1 { font-size: 3.5rem; font-weight: 700; margin: 0; }
     header p { font-size: 1.4rem; margin: 15px 0; font-weight: 300; }
-    .cta { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 18px 36px; border: none; border-radius: 8px; font-size: 1.2rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 30px; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3); transition: transform 0.2s; }
-    .cta:hover { transform: translateY(-2px); }
+    .cta { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 18px 36px; border: none; border-radius: 8px; font-size: 1.2rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 30px; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3); }
     .section { margin: 80px 0; }
     .section h2 { text-align: center; font-size: 2.8rem; color: #1e3a8a; margin-bottom: 40px; font-weight: 600; }
     .section p { font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto 40px; }
     .stats { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
-    .stat { background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; width: calc(25% - 20px); min-width: 200px; transition: transform 0.3s; }
-    .stat:hover { transform: translateY(-5px); }
+    .stat { background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; width: calc(25% - 20px); min-width: 200px; }
     .stat h3 { font-size: 2.5rem; color: #3b82f6; margin: 0; font-weight: 700; }
     .stat p { font-size: 1rem; margin: 15px 0 0; }
     .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-    .benefit { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; }
-    .benefit:hover { transform: translateY(-5px); }
+    .benefit { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
     .benefit h3 { color: #1e3a8a; margin-bottom: 20px; font-weight: 600; }
     .benefit p { font-size: 1rem; }
     .quote { font-style: italic; font-weight: 500; margin: 20px 0; text-align: center; }
@@ -201,10 +197,6 @@
             <li>Follow-through completion within 14 days</li>
             <li>Unresolved high-risk cases >7 days</li>
             <li>Referral completion rates</li>
-            <li>Escalation rates by unit</li>
-            <li>Workload visibility</li>
-            <li>Vendor utilization</li>
-            <li>Students reached beyond center</li>
           </ul>
         </div>
         <div class="kpi">
@@ -214,9 +206,6 @@
             <li>Duplicate spend detection</li>
             <li>Service bottlenecks</li>
             <li>Unfunded demand visibility</li>
-            <li>Governed reallocation</li>
-            <li>Budget uplift opportunities</li>
-            <li>Funding intelligence</li>
           </ul>
         </div>
       </div>
@@ -294,7 +283,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2024 HEIAxis. All rights reserved. | <a href="#">Privacy Policy</a> | Founded by Sagi Gilad</p>
+      <p>&copy; 2024 HEIAxis. All rights reserved. | <a href="">Privacy Policy</a></p>
     </div>
   </footer>
 </body>
