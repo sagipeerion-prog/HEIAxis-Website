@@ -7,7 +7,7 @@
   <style>
     body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f8fafc; color: #2d3748; line-height: 1.6; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    header { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 80px 0 60px; text-align: center; position: relative; }
+    header { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 100px 0 80px; text-align: center; position: relative; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI0MDAiIHZpZXdCb3g9IjAgMCAxMjAwIDQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agc3R5bGU9InN0b3AtY29sb3I6IzFlM2E4YTsiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIuNSIgc3R5bGU9InN0b3AtY29sb3I6IzNiODJmNiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmZmZmY7Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNnKSIgb3BhY2l0eT0iMC4xIi8+Cjwvc3ZnPg=='); background-size: cover; background-position: center; }
     header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.1); }
     header .container { position: relative; z-index: 1; }
     header h1 { font-size: 3.5rem; font-weight: 700; margin: 0; }
@@ -17,11 +17,13 @@
     .section h2 { text-align: center; font-size: 2.8rem; color: #1e3a8a; margin-bottom: 40px; font-weight: 600; }
     .section p { font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto 40px; }
     .stats { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
-    .stat { background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; width: calc(25% - 20px); min-width: 200px; }
+    .stat { background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; width: calc(25% - 20px); min-width: 200px; position: relative; }
+    .stat::before { content: '📊'; font-size: 2rem; display: block; margin-bottom: 10px; }
     .stat h3 { font-size: 2.5rem; color: #3b82f6; margin: 0; font-weight: 700; }
     .stat p { font-size: 1rem; margin: 15px 0 0; }
     .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-    .benefit { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .benefit { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
+    .benefit::before { content: '✅'; font-size: 2rem; display: block; margin-bottom: 10px; }
     .benefit h3 { color: #1e3a8a; margin-bottom: 20px; font-weight: 600; }
     .benefit p { font-size: 1rem; }
     .quote { font-style: italic; font-weight: 500; margin: 20px 0; text-align: center; }
@@ -34,19 +36,22 @@
     .before li:before { content: '✗ '; color: #dc2626; }
     .after li:before { content: '✓ '; color: #16a34a; }
     .layers { display: flex; flex-direction: column; gap: 20px; }
-    .layer { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .layer { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
+    .layer::before { content: '🔧'; font-size: 2rem; display: block; margin-bottom: 10px; }
     .layer h4 { color: #1e3a8a; }
     .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
     .kpi { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    .roi { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
+    .roi { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; position: relative; }
+    .roi::before { content: '💰'; font-size: 2rem; display: block; margin-bottom: 10px; }
     .roi h3 { color: #3b82f6; }
     .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .tier { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .tier { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
+    .tier::before { content: '📈'; font-size: 2rem; display: block; margin-bottom: 10px; }
     .tier h4 { color: #1e3a8a; }
-    .moat { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    .market { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
-    .ask { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 60px 0; text-align: center; }
-    .ask h2 { color: white; }
+    .moat { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
+    .moat::before { content: '🛡️'; font-size: 2rem; display: block; margin-bottom: 10px; }
+    .market { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; position: relative; }
+    .market::before { content: '🌍'; font-size: 2rem; display: block; margin-bottom: 10px; }
     .footer { text-align: center; padding: 50px 0; background: #1e3a8a; color: white; }
     .footer a { color: #f59e0b; text-decoration: none; }
     @media (max-width: 768px) {
@@ -69,6 +74,11 @@
   </header>
 
   <div class="container">
+    <section class="section">
+      <h2>Our Mission</h2>
+      <p>At HEIAxis, we empower institutions to govern student support with unified, auditable systems. Through deep research and innovative architecture, we transform fragmented services into accountable outcomes.</p>
+    </section>
+
     <section class="section">
       <h2>Research & Traction</h2>
       <div class="stats">
@@ -261,16 +271,6 @@
         <p>560+ Target U.S. Institutions (>10K enrollment), $55B+ Annual Spend, $5.5B+ Control-Layer Opportunity.</p>
         <p><strong>5-Year ARR Build:</strong> Year 1: $0 (4 lighthouse), Year 2: $32M (20 inst, ~$1.6M avg), Year 3: $100M (45 inst, ~$2.2M), Year 4: $315M (90 inst, ~$3.5M), Year 5: $700M (200 inst, ~$3.5M).</p>
         <p>ARR expands per institution through depth, RegTech, intelligence, copilots, value-based participation.</p>
-      </div>
-    </section>
-
-    <section class="section ask">
-      <div class="container">
-        <h2>The Ask: $2.4M Strategic Lead Angel Round</h2>
-        <p>Use of Funds: 55% Product Dev, 20% Deployment & Overheads, 15% GTM, 10% Integrations & Auditability.</p>
-        <p>What This Proves: Repeatable Buying Motion, Live ROI Case Studies, Expansion to 20 Institutions in 18 Months.</p>
-        <p>We seek partners to define the governed standard before fragmented AI defines it by default.</p>
-        <a href="mailto:info@heiaxis.com" class="cta">Contact Us</a>
       </div>
     </section>
 
