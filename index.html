@@ -68,9 +68,111 @@
     .hero-animate-3 { animation: fadeInUp 0.8s ease 0.5s both; }
     .hero-animate-4 { animation: fadeInUp 0.8s ease 0.7s both; }
     .hero-animate-5 { animation: fadeInUp 0.8s ease 0.9s both; }
+
+    /* Scroll progress bar */
+    #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: #63B3ED; z-index: 100; transition: width 0.05s linear; pointer-events: none; }
+
+    /* Particle canvas */
+    #particle-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+    /* Hero dashboard panel */
+    .dashboard-panel { background: #0D1117; border: 1px solid #1E2530; border-radius: 10px; box-shadow: 0 0 60px rgba(43,108,176,0.15); overflow: hidden; }
+    .dashboard-panel-header { background: #161b22; border-bottom: 1px solid #1E2530; padding: 10px 14px; display: flex; align-items: center; gap: 8px; }
+    .mac-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .mac-dot-red { background: #FF5F57; }
+    .mac-dot-yellow { background: #FFBD2E; }
+    .mac-dot-green { background: #28CA41; }
+    .dashboard-title { font-size: 11px; font-weight: 600; color: #8B9BAD; letter-spacing: 0.05em; margin-left: 4px; }
+    .dashboard-section { padding: 14px 16px; border-bottom: 1px solid #1E2530; }
+    .dashboard-metrics { display: flex; gap: 0; }
+    .dashboard-metric { flex: 1; text-align: center; padding: 8px 4px; }
+    .dashboard-metric-value { font-size: 22px; font-weight: 700; color: #F0F2F5; font-family: 'Inter', sans-serif; letter-spacing: -0.04em; }
+    .dashboard-metric-label { font-size: 10px; color: #8B9BAD; margin-top: 2px; letter-spacing: 0.02em; }
+    .dashboard-metric-divider { width: 1px; background: #1E2530; align-self: stretch; }
+
+    /* Mini bar chart */
+    .bar-chart { display: flex; align-items: flex-end; gap: 4px; height: 36px; padding: 6px 0 2px; }
+    .bar { width: 100%; border-radius: 2px 2px 0 0; background: #2B6CB0; transform-origin: bottom; animation: barGrow 0.8s ease both; }
+    @keyframes barGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+    .bar:nth-child(1) { animation-delay: 0.3s; }
+    .bar:nth-child(2) { animation-delay: 0.45s; }
+    .bar:nth-child(3) { animation-delay: 0.6s; }
+    .bar:nth-child(4) { animation-delay: 0.75s; }
+    .bar:nth-child(5) { animation-delay: 0.9s; }
+    .bar:nth-child(6) { animation-delay: 1.05s; }
+
+    /* Activity rows */
+    .activity-row { display: flex; align-items: center; gap: 8px; padding: 5px 0; opacity: 0; animation: actFadeIn 0.5s ease both; }
+    @keyframes actFadeIn { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: translateX(0); } }
+    .activity-row:nth-child(1) { animation-delay: 0.8s; }
+    .activity-row:nth-child(2) { animation-delay: 1.2s; }
+    .activity-row:nth-child(3) { animation-delay: 1.6s; }
+    .activity-row:nth-child(4) { animation-delay: 2.0s; }
+    .activity-dot { width: 6px; height: 6px; border-radius: 50%; background: #63B3ED; flex-shrink: 0; }
+    .activity-text { font-size: 11px; color: #c9d1d9; flex: 1; }
+    .activity-time { font-size: 10px; color: #8B9BAD; flex-shrink: 0; }
+
+    /* Compliance row */
+    .compliance-row { padding: 10px 16px; display: flex; align-items: center; gap: 14px; background: #0D1117; }
+    .compliance-label { font-size: 10px; color: #8B9BAD; letter-spacing: 0.04em; }
+    .compliance-item { display: flex; align-items: center; gap: 4px; }
+    .compliance-item-label { font-size: 11px; color: #68d391; font-weight: 600; }
+
+    /* Photo strip */
+    .photo-strip { display: flex; gap: 8px; margin-top: 12px; }
+    .photo-strip-img { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; border: 2px solid #1E2530; flex-shrink: 0; transition: opacity 0.25s ease; }
+    .photo-strip-img:hover { opacity: 0.75; }
+    .photo-strip-caption { font-size: 11px; color: #8B9BAD; margin-top: 7px; }
+
+    /* Field Evidence photo band */
+    .photo-band { display: flex; overflow: hidden; border-radius: 10px; margin-bottom: 4rem; }
+    .photo-band-item { flex: 1; position: relative; height: 280px; overflow: hidden; }
+    .photo-band-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-band-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,13,18,0.7), transparent); pointer-events: none; }
+    .photo-band-caption { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; font-size: 12px; font-weight: 600; color: #fff; z-index: 1; font-family: 'Inter', sans-serif; letter-spacing: 0.03em; }
+    @media (max-width: 767px) {
+      .photo-band { flex-direction: column; }
+      .photo-band-item { height: 200px; flex: none; }
+      .photo-strip { display: none; }
+      .photo-strip-caption { display: none; }
+    }
+
+    /* Pulse indicator */
+    .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: #63B3ED; flex-shrink: 0; animation: pulseAnim 2s infinite; }
+    .pulse-dot-1 { animation-delay: 0s; }
+    .pulse-dot-2 { animation-delay: 0.7s; }
+    .pulse-dot-3 { animation-delay: 1.4s; }
+    @keyframes pulseAnim {
+      0%   { box-shadow: 0 0 0 0 rgba(99,179,237,0.4); }
+      70%  { box-shadow: 0 0 0 8px rgba(99,179,237,0); }
+      100% { box-shadow: 0 0 0 0 rgba(99,179,237,0); }
+    }
+
+    /* Before/After — after side background */
+    .after-side { position: relative; }
+    .after-side::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.08;
+      z-index: 0;
+    }
+    .after-side > * { position: relative; z-index: 1; }
+
+    /* Architecture SVG data flow */
+    .arch-flow-wrap { position: relative; }
+    .arch-flow-svg { position: absolute; left: -24px; top: 0; bottom: 0; width: 16px; height: 100%; pointer-events: none; }
+    @media (max-width: 767px) { .arch-flow-svg { display: none; } }
+    @keyframes dotFlow { from { transform: translateY(0); } to { transform: translateY(100%); } }
+    .flow-dot { animation: dotFlow 3s linear infinite; }
   </style>
 </head>
 <body>
+
+<div id="scroll-progress" aria-hidden="true"></div>
 
 <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -102,7 +204,8 @@
 </nav>
 
 <section class="relative min-h-screen flex items-center bg-hei-black dot-grid overflow-hidden" style="padding-top:4rem;">
-  <div class="max-w-7xl mx-auto px-6 w-full py-24 flex flex-col lg:flex-row items-start lg:items-center gap-16">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div class="max-w-7xl mx-auto px-6 w-full py-24 flex flex-col lg:flex-row items-start lg:items-center gap-16" style="position:relative;z-index:1;">
     <div class="flex-1 max-w-2xl">
       <div class="hero-animate-1">
         <span class="inline-block text-xs font-semibold tracking-widest uppercase text-hei-blue mb-6">Institutional Control Architecture</span>
@@ -119,56 +222,87 @@
         <a href="#platform" class="text-hei-text hover:text-hei-blue-light text-sm font-medium transition-colors duration-200 flex items-center gap-1">See the Architecture &rarr;</a>
       </div>
     </div>
-    <div class="flex-shrink-0 w-full lg:w-auto lg:min-w-96 hero-animate-5" aria-hidden="true">
-      <div class="border border-hei-border rounded-lg overflow-hidden" style="background:#111418;">
-        <div class="px-4 py-3 border-b border-hei-border flex items-center gap-2">
-          <div class="w-2 h-2 rounded-full" style="background:#3182CE;"></div>
-          <span class="text-hei-muted text-xs font-medium tracking-wider uppercase">HEIAxis Architecture</span>
+    <div class="flex-shrink-0 w-full lg:w-auto lg:min-w-96 hero-animate-5">
+      <!-- Live dashboard mock -->
+      <div class="dashboard-panel">
+        <div class="dashboard-panel-header">
+          <span class="mac-dot mac-dot-red"></span>
+          <span class="mac-dot mac-dot-yellow"></span>
+          <span class="mac-dot mac-dot-green"></span>
+          <span class="dashboard-title">HEIAxis — Live Operations</span>
         </div>
-        <div class="p-4 flex flex-col gap-3">
-          <div class="flex items-center gap-3">
-            <span class="text-hei-muted text-xs w-5">01</span>
-            <div class="flex-1 rounded" style="border-left:3px solid #63B3ED;background:#151a22;padding:10px 14px;">
-              <div class="text-xs font-semibold text-hei-text">Student Interface Layer</div>
-              <div class="text-xs text-hei-muted mt-0.5">24/7 access &middot; cohort support &middot; engagement</div>
+        <!-- Metrics row -->
+        <div class="dashboard-section" style="padding-bottom:0;">
+          <div class="dashboard-metrics">
+            <div class="dashboard-metric">
+              <div class="dashboard-metric-value" data-hero-countup="247">0</div>
+              <div class="dashboard-metric-label">Active Cases</div>
+            </div>
+            <div class="dashboard-metric-divider"></div>
+            <div class="dashboard-metric">
+              <div class="dashboard-metric-value" data-hero-countup="12">0</div>
+              <div class="dashboard-metric-label">Escalations</div>
+            </div>
+            <div class="dashboard-metric-divider"></div>
+            <div class="dashboard-metric">
+              <div class="dashboard-metric-value" data-hero-countup="8">0</div>
+              <div class="dashboard-metric-label">At-Risk</div>
             </div>
           </div>
-          <div class="flex items-center gap-3">
-            <span class="text-hei-muted text-xs w-5">02</span>
-            <div class="flex-1 rounded" style="border-left:3px solid #4299E1;background:#151a22;padding:10px 14px;">
-              <div class="text-xs font-semibold text-hei-text">Operational Layer</div>
-              <div class="text-xs text-hei-muted mt-0.5">Routing &middot; ownership &middot; case coordination</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-hei-muted text-xs w-5">03</span>
-            <div class="flex-1 rounded" style="border-left:3px solid #3182CE;background:#151a22;padding:10px 14px;">
-              <div class="text-xs font-semibold text-hei-text">Evidence Layer</div>
-              <div class="text-xs text-hei-muted mt-0.5">Decision paths &middot; escalation proof &middot; traceability</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-hei-muted text-xs w-5">04</span>
-            <div class="flex-1 rounded" style="border-left:3px solid #2B6CB0;background:#151a22;padding:10px 14px;">
-              <div class="text-xs font-semibold text-hei-text">RegTech Layer</div>
-              <div class="text-xs text-hei-muted mt-0.5">Policy logic &middot; audit trails &middot; FERPA/HIPAA</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-hei-muted text-xs w-5">05</span>
-            <div class="flex-1 rounded" style="border-left:3px solid #2C5282;background:#151a22;padding:10px 14px;">
-              <div class="text-xs font-semibold text-hei-text">Budget Intelligence Layer</div>
-              <div class="text-xs text-hei-muted mt-0.5">Utilization &middot; spend detection &middot; funding gaps</div>
-            </div>
+          <!-- Mini bar chart -->
+          <div class="bar-chart" style="margin-top:10px;">
+            <div class="bar" style="height:55%;background:#2B6CB0;"></div>
+            <div class="bar" style="height:80%;background:#3182CE;"></div>
+            <div class="bar" style="height:45%;background:#2B6CB0;"></div>
+            <div class="bar" style="height:95%;background:#63B3ED;"></div>
+            <div class="bar" style="height:65%;background:#3182CE;"></div>
+            <div class="bar" style="height:75%;background:#2B6CB0;"></div>
           </div>
         </div>
-        <div class="px-4 py-3 border-t border-hei-border">
-          <div class="flex items-center gap-2">
-            <div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-            <span class="text-hei-muted text-xs">Campus-owned &middot; Auditable by default</span>
+        <!-- Activity feed -->
+        <div class="dashboard-section">
+          <div style="font-size:10px;font-weight:600;color:#8B9BAD;letter-spacing:0.06em;margin-bottom:6px;">RECENT ACTIVITY</div>
+          <div class="activity-row">
+            <div class="activity-dot"></div>
+            <div class="activity-text">Case #1042 routed &rarr; Counseling</div>
+            <div class="activity-time">2m</div>
+          </div>
+          <div class="activity-row">
+            <div class="activity-dot"></div>
+            <div class="activity-text">Escalation #88 resolved</div>
+            <div class="activity-time">5m</div>
+          </div>
+          <div class="activity-row">
+            <div class="activity-dot"></div>
+            <div class="activity-text">Budget alert: $42K unallocated</div>
+            <div class="activity-time">9m</div>
+          </div>
+          <div class="activity-row">
+            <div class="activity-dot"></div>
+            <div class="activity-text">Case #1039 evidence logged</div>
+            <div class="activity-time">12m</div>
+          </div>
+        </div>
+        <!-- Compliance status -->
+        <div class="compliance-row">
+          <span class="compliance-label">Compliance Status:</span>
+          <div class="compliance-item">
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#276749"/><path d="M3 6.5l2 2 4-4" stroke="#68d391" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            <span class="compliance-item-label">FERPA</span>
+          </div>
+          <div class="compliance-item">
+            <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#276749"/><path d="M3 6.5l2 2 4-4" stroke="#68d391" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            <span class="compliance-item-label">HIPAA</span>
           </div>
         </div>
       </div>
+      <!-- Campus photo strip -->
+      <div class="photo-strip">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=200&h=200&fit=crop" alt="Campus students" class="photo-strip-img" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=200&h=200&fit=crop" alt="University campus" class="photo-strip-img" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=200&h=200&fit=crop" alt="Student advisor meeting" class="photo-strip-img" loading="lazy" />
+      </div>
+      <div class="photo-strip-caption">1,100+ student interviews &middot; 41 institutions studied</div>
     </div>
   </div>
 </section>
@@ -216,21 +350,30 @@
     </div>
     <div style="border-top:1px solid #1E2530;border-bottom:1px solid #1E2530;">
       <div class="py-10 flex flex-col md:flex-row md:items-start gap-6 md:gap-12 fade-up" style="border-bottom:1px solid #1E2530;">
-        <div class="flex-shrink-0 font-bold text-5xl md:text-6xl" style="color:#1E2530;min-width:80px;font-family:'Inter',sans-serif;">01</div>
+        <div class="flex items-center gap-3 flex-shrink-0" style="min-width:80px;">
+          <div class="pulse-dot pulse-dot-1" aria-hidden="true"></div>
+          <div class="font-bold text-5xl md:text-6xl" style="color:#1E2530;font-family:'Inter',sans-serif;">01</div>
+        </div>
         <div class="flex-1">
           <h3 class="text-hei-text font-semibold text-xl mb-3">AI Without Governance</h3>
           <p class="text-hei-muted leading-relaxed max-w-2xl">AI is entering campus workflows before institutional standards exist. Every uncontrolled tool is a compliance and data sovereignty risk. The institution needs a governed layer before — not after — deployment.</p>
         </div>
       </div>
       <div class="py-10 flex flex-col md:flex-row md:items-start gap-6 md:gap-12 fade-up" style="border-bottom:1px solid #1E2530;">
-        <div class="flex-shrink-0 font-bold text-5xl md:text-6xl" style="color:#1E2530;min-width:80px;font-family:'Inter',sans-serif;">02</div>
+        <div class="flex items-center gap-3 flex-shrink-0" style="min-width:80px;">
+          <div class="pulse-dot pulse-dot-2" aria-hidden="true"></div>
+          <div class="font-bold text-5xl md:text-6xl" style="color:#1E2530;font-family:'Inter',sans-serif;">02</div>
+        </div>
         <div class="flex-1">
           <h3 class="text-hei-text font-semibold text-xl mb-3">Vendor Sprawl by Default</h3>
           <p class="text-hei-muted leading-relaxed max-w-2xl">Institutions have accumulated siloed vendors with no unified governance, no consolidated evidence, and no performance accountability. Each new contract deepens the fragmentation.</p>
         </div>
       </div>
       <div class="py-10 flex flex-col md:flex-row md:items-start gap-6 md:gap-12 fade-up">
-        <div class="flex-shrink-0 font-bold text-5xl md:text-6xl" style="color:#1E2530;min-width:80px;font-family:'Inter',sans-serif;">03</div>
+        <div class="flex items-center gap-3 flex-shrink-0" style="min-width:80px;">
+          <div class="pulse-dot pulse-dot-3" aria-hidden="true"></div>
+          <div class="font-bold text-5xl md:text-6xl" style="color:#1E2530;font-family:'Inter',sans-serif;">03</div>
+        </div>
         <div class="flex-1">
           <h3 class="text-hei-text font-semibold text-xl mb-3">Budget Accountability Pressure</h3>
           <p class="text-hei-muted leading-relaxed max-w-2xl">CFOs and Boards demand auditable ROI from Student Affairs spend. Activity metrics are no longer sufficient. Institutions need defensible outcome evidence — before the next budget review.</p>
@@ -256,7 +399,7 @@
     </div>
     <div class="hidden lg:block w-px" style="background:#1E2530;"></div>
     <div class="lg:hidden h-px" style="background:#1E2530;"></div>
-    <div class="flex-1 px-8 md:px-16 py-20 slide-right" style="background:#F7F8FA;">
+    <div class="flex-1 px-8 md:px-16 py-20 slide-right after-side" style="background:#F7F8FA;">
       <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#2B6CB0;">After HEIAxis</span>
       <h3 class="font-display text-3xl md:text-4xl font-bold mb-10" style="font-family:'Playfair Display',Georgia,serif;color:#0A0D12;">One Governed Layer</h3>
       <ul class="flex flex-col gap-5">
@@ -285,7 +428,12 @@
       </h2>
       <p class="text-hei-muted text-lg max-w-2xl">Integrates with your SIS, EHR, and CRM. No rip-and-replace. Campus-owned from day one.</p>
     </div>
-    <div class="rounded-lg overflow-hidden border border-hei-border">
+    <div class="rounded-lg overflow-hidden border border-hei-border arch-flow-wrap">
+      <!-- Animated data flow line (desktop only) -->
+      <svg class="arch-flow-svg" aria-hidden="true" viewBox="0 0 16 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="8" y1="0" x2="8" y2="100" stroke="#1E2530" stroke-width="1.5"/>
+        <circle class="flow-dot" cx="8" cy="4" r="4" fill="#63B3ED"/>
+      </svg>
       <div class="arch-layer flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-6 py-6 border-b border-hei-border" style="border-left:4px solid #63B3ED;">
         <div class="text-hei-muted text-xs font-medium w-8 flex-shrink-0">01</div>
         <div class="flex-1 flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
@@ -337,6 +485,21 @@
       <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight" style="font-family:'Playfair Display',Georgia,serif;color:#0A0D12;max-width:640px;">
         Built from operational reality. Not theoretical architecture.
       </h2>
+    </div>
+    <!-- Photo band -->
+    <div class="photo-band fade-up">
+      <div class="photo-band-item">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=280&fit=crop" alt="Students engaged on campus" loading="lazy" />
+        <div class="photo-band-caption">Student Engagement</div>
+      </div>
+      <div class="photo-band-item">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=280&fit=crop" alt="Advisors coordinating student support" loading="lazy" />
+        <div class="photo-band-caption">Advisor Coordination</div>
+      </div>
+      <div class="photo-band-item">
+        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=280&fit=crop" alt="Institutional accountability meeting" loading="lazy" />
+        <div class="photo-band-caption">Institutional Accountability</div>
+      </div>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mb-20">
       <div class="fade-up">
@@ -487,8 +650,14 @@
 <script>
 (function(){
   var nav=document.getElementById("main-nav");
+
+  /* Scroll progress bar */
+  var progressBar=document.getElementById("scroll-progress");
   window.addEventListener("scroll",function(){
     if(window.scrollY>50){nav.classList.add("scrolled");}else{nav.classList.remove("scrolled");}
+    var docH=document.documentElement.scrollHeight-window.innerHeight;
+    var pct=docH>0?(window.scrollY/docH*100):0;
+    progressBar.style.width=pct+"%";
   },{passive:true});
 
   var btn=document.getElementById("hamburger-btn");
@@ -534,6 +703,82 @@
     entries.forEach(function(e){if(e.isIntersecting){startCountUp(e.target);cuObs.unobserve(e.target);}});
   },{threshold:0.3});
   document.querySelectorAll("[data-countup]").forEach(function(el){cuObs.observe(el);});
+
+  /* Hero dashboard count-up (runs on load, not scroll) */
+  function heroCountUp(el){
+    var target=parseInt(el.getAttribute("data-hero-countup"),10);
+    var dur=1200;
+    var start=performance.now();
+    function tick(now){
+      var prog=Math.min((now-start)/dur,1);
+      var eased=1-Math.pow(1-prog,3);
+      el.textContent=Math.round(eased*target);
+      if(prog<1){requestAnimationFrame(tick);}else{el.textContent=target;}
+    }
+    requestAnimationFrame(tick);
+  }
+  document.querySelectorAll("[data-hero-countup]").forEach(function(el){
+    setTimeout(function(){heroCountUp(el);},600);
+  });
+
+  /* Particle canvas — constellation effect behind hero */
+  (function(){
+    var canvas=document.getElementById("particle-canvas");
+    if(!canvas){return;}
+    var ctx=canvas.getContext("2d");
+    var W,H,particles=[];
+    /* N: number of dots; MAX_DIST: px threshold for drawing connecting lines;
+       SPEED: max px per frame (kept very low for subtle motion); RADIUS: dot radius */
+    var N=60,MAX_DIST=120,SPEED=0.3,RADIUS=1.5;
+    /* HEI blue (hei-blue #2B6CB0) decomposed for canvas rgba usage */
+    var LINE_RGB="43,108,176";
+    function resize(){
+      var rect=canvas.parentElement.getBoundingClientRect();
+      W=canvas.width=rect.width||window.innerWidth;
+      H=canvas.height=rect.height||window.innerHeight;
+    }
+    function rand(min,max){return min+Math.random()*(max-min);}
+    function init(){
+      particles=[];
+      for(var i=0;i<N;i++){
+        var angle=rand(0,Math.PI*2);
+        var speed=rand(0.05,SPEED);
+        particles.push({x:rand(0,W),y:rand(0,H),vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed});
+      }
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<particles.length;i++){
+        var p=particles[i];
+        p.x+=p.vx;p.y+=p.vy;
+        /* Toroidal wrap-around */
+        if(p.x<0)p.x+=W; if(p.x>W)p.x-=W;
+        if(p.y<0)p.y+=H; if(p.y>H)p.y-=H;
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,RADIUS,0,Math.PI*2);
+        ctx.fillStyle="rgba(255,255,255,0.25)";
+        ctx.fill();
+        for(var j=i+1;j<particles.length;j++){
+          var q=particles[j];
+          var dx=p.x-q.x,dy=p.y-q.y;
+          var dist=Math.sqrt(dx*dx+dy*dy);
+          if(dist<MAX_DIST){
+            ctx.beginPath();
+            ctx.moveTo(p.x,p.y);
+            ctx.lineTo(q.x,q.y);
+            ctx.strokeStyle="rgba("+LINE_RGB+","+(0.2*(1-dist/MAX_DIST))+")";
+            ctx.lineWidth=0.8;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    resize();
+    init();
+    draw();
+    window.addEventListener("resize",function(){resize();init();},{passive:true});
+  })();
 })();
 </script>
 </body>
