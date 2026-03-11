@@ -5,47 +5,49 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>HEIAxis - Control Architecture for Student Affairs</title>
   <style>
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; background: #f4f7fa; color: #333; line-height: 1.6; }
-    .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
-    header { text-align: center; padding: 3rem 0; background: linear-gradient(135deg, #0056b3, #00a8cc); color: white; }
+    body { font-family: 'Arial', sans-serif; margin: 0; background: #f8f9fa; color: #333; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header { background: linear-gradient(135deg, #003366, #005a87); color: white; padding: 50px 0; text-align: center; }
     header h1 { font-size: 3rem; margin: 0; }
-    header p { font-size: 1.2rem; margin: 1rem 0; }
-    .cta { background: #0056b3; color: #fff; padding: 1rem 2rem; border: none; border-radius: 5px; font-size: 1.2rem; cursor: pointer; margin-top: 1rem; }
-    .cta:hover { background: #003d82; }
-    .section { margin: 4rem 0; text-align: center; }
-    .section h2 { color: #0056b3; font-size: 2.5rem; margin-bottom: 1rem; }
-    .stats { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 2rem; }
-    .stat { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 22%; min-width: 200px; margin-bottom: 1rem; }
-    .stat h3 { margin: 0; color: #0056b3; }
-    .benefits { display: flex; justify-content: space-around; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
-    .benefit { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 30%; min-width: 250px; }
-    .benefit h3 { color: #0056b3; }
-    .footer { text-align: center; padding: 2rem 0; border-top: 1px solid #ddd; margin-top: 4rem; }
-    .footer a { color: #0056b3; text-decoration: none; }
+    header p { font-size: 1.3rem; margin: 10px 0; }
+    .cta { background: #ff6b35; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 1.1rem; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; }
+    .cta:hover { background: #e55a2b; }
+    .section { margin: 60px 0; }
+    .section h2 { text-align: center; font-size: 2.5rem; color: #003366; margin-bottom: 30px; }
+    .stats { display: flex; justify-content: space-around; flex-wrap: wrap; }
+    .stat { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; width: 22%; min-width: 200px; margin-bottom: 20px; }
+    .stat h3 { font-size: 2rem; color: #003366; margin: 0; }
+    .stat p { font-size: 1rem; margin: 10px 0 0; }
+    .benefits { display: flex; justify-content: space-around; flex-wrap: wrap; }
+    .benefit { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 30%; min-width: 300px; margin-bottom: 20px; }
+    .benefit h3 { color: #003366; margin-bottom: 15px; }
+    .footer { text-align: center; padding: 40px 0; background: #003366; color: white; }
+    .footer a { color: #ff6b35; text-decoration: none; }
     @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
       .stats, .benefits { flex-direction: column; align-items: center; }
       .stat, .benefit { width: 90%; }
-      header h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <!-- Placeholder for logo -->
-      <img src="https://via.placeholder.com/100x50?text=HEIAxis" alt="HEIAxis Logo" style="margin-bottom: 1rem;">
-      <h1>Govern Care. Prove Outcomes. Unlock Funding.</h1>
+  <header>
+    <div class="container">
+      <h1>HEIAxis</h1>
       <p>The Control Architecture for Student Affairs and Campus Care</p>
-      <button class="cta">Request a Demo</button>
-    </header>
-
-    <div class="section">
-      <h2>The Breakpoint</h2>
-      <p>Higher education has invested heavily in student support, yet lacks a unified control layer. Fragmented systems lead to ungoverned spend and unmet needs. HEIAxis installs the governance standard, enabling institutions to prove outcomes and unlock funding.</p>
+      <p>Govern Care. Prove Outcomes. Unlock Funding.</p>
+      <a href="#contact" class="cta">Request a Demo</a>
     </div>
+  </header>
 
-    <div class="section">
-      <h2>Key Insights from Research</h2>
+  <div class="container">
+    <section class="section">
+      <h2>The Breakpoint</h2>
+      <p>Student Affairs spend is massive yet ungoverned. Fragmented systems lead to unmet needs and unproven ROI. HEIAxis provides the unified control layer institutions need to govern workflows, prove outcomes, and unlock funding.</p>
+    </section>
+
+    <section class="section">
+      <h2>Key Insights</h2>
       <div class="stats">
         <div class="stat">
           <h3>1,100+</h3>
@@ -64,36 +66,37 @@
           <p>Annual Spend</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>What HEIAxis Delivers</h2>
+    <section class="section">
+      <h2>Our Solution</h2>
       <div class="benefits">
         <div class="benefit">
           <h3>One Governed Flow</h3>
-          <p>End-to-end control across Student Affairs, ensuring every handoff and escalation is managed and visible.</p>
+          <p>End-to-end visibility and control across all student interactions, ensuring compliance and efficiency.</p>
         </div>
         <div class="benefit">
           <h3>Evidence Spine</h3>
-          <p>A complete record of interactions, providing auditable proof of delivery and compliance.</p>
+          <p>Auditable records of every decision, escalation, and outcome for institutional proof.</p>
         </div>
         <div class="benefit">
           <h3>Institutional ROI</h3>
-          <p>Unlock funding by proving outcomes, reducing costs, and demonstrating value to budget owners.</p>
+          <p>Reduce costs, improve retention, and demonstrate value to secure funding.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>Trusted by Institutions</h2>
-      <p>Backed by deep research across diverse institutions, HEIAxis is designed for scale and compliance.</p>
-      <button class="cta">Contact Us</button>
-    </div>
-
-    <div class="footer">
-      <p>&copy; 2024 HEIAxis. All rights reserved. | <a href="#">Privacy Policy</a></p>
-      <p>For inquiries: <a href="mailto:info@heiaxis.com">info@heiaxis.com</a></p>
-    </div>
+    <section class="section" id="contact">
+      <h2>Contact Us</h2>
+      <p>Ready to transform your institution? Reach out for a demo.</p>
+      <a href="mailto:info@heiaxis.com" class="cta">Get in Touch</a>
+    </section>
   </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 HEIAxis. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </div>
+  </footer>
 </body>
 </html>
