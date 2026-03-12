@@ -1,0 +1,16 @@
+<svg width="40" height="48" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="bolt-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#FFD700" flood-opacity="0.9"/>
+    </filter>
+  </defs>
+  <polygon points="2,24 20,14 20,38 2,48" fill="#1B3FAB"/>
+  <polygon points="20,14 38,24 38,48 20,38" fill="#F5A623"/>
+  <polygon points="27,22 23,30 26,30 22,38 30,28 27,28" fill="#FFD700" opacity="1" filter="url(#bolt-glow)"/>
+  <polygon points="2,24 20,14 38,24 20,34" fill="#0F1D5A" opacity="0.6"/>
+  <polygon points="4,18 20,9 36,18 20,27" fill="#B0B8C1"/>
+  <polygon points="4,18 20,27 20,29 4,20" fill="#8A929A"/>
+  <circle cx="20" cy="18" r="2.5" fill="#F5A623"/>
+  <line x1="20" y1="18" x2="30" y2="22" stroke="#F5A623" stroke-width="1.5"/>
+  <circle cx="30" cy="24" r="2" fill="#F5A623"/>
+</svg>
