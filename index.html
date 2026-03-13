@@ -71,6 +71,19 @@
     .footer-link:hover { color: #FFFFFF; }
     .footer-copy { color: rgba(255,255,255,0.45); transition: color 0.2s ease; }
     .footer-copy:hover { color: rgba(255,255,255,0.8); }
+
+    @keyframes float-slow { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-28px); } }
+    @keyframes float-medium { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-18px); } }
+    .hero-orb { position: absolute; border-radius: 50%; pointer-events: none; }
+    .hero-orb-1 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(29,78,216,0.13) 0%, transparent 70%); filter: blur(70px); right: -100px; top: 5%; animation: float-slow 9s ease-in-out infinite; z-index: 0; }
+    .hero-orb-2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(245,166,35,0.1) 0%, transparent 70%); filter: blur(50px); right: 10%; bottom: 8%; animation: float-medium 7s ease-in-out infinite 1.5s; z-index: 0; }
+    @media (prefers-reduced-motion: reduce) { .hero-orb-1, .hero-orb-2 { animation: none; } }
+
+    .campus-card { border-radius: 18px; overflow: hidden; box-shadow: 0 14px 40px rgba(30,58,95,0.16); position: relative; }
+    .campus-card img { transition: transform 0.6s ease; display: block; width: 100%; height: 100%; object-fit: cover; }
+    .campus-card:hover img { transform: scale(1.05); }
+
+    .float-badge { background: #fff; border-radius: 14px; padding: 14px 18px; box-shadow: 0 10px 30px rgba(30,58,95,0.18); }
   </style>
 </head>
 <body>
@@ -78,7 +91,7 @@
 <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="#" class="flex items-center" aria-label="HEIAxis home" style="text-decoration:none;">
-      <img src="LOGO.png" alt="HEIAxis" style="height:40px;width:auto;display:block;" />
+      <img src="LOGO.png" alt="HEIAxis" style="height:52px;width:auto;display:block;mix-blend-mode:multiply;" />
     </a>
     <div class="hidden lg:flex items-center gap-6">
       <a href="#platform" class="text-hei-muted hover:text-hei-text text-sm font-medium transition-colors duration-200">Platform</a>
@@ -90,7 +103,7 @@
       <a href="#contact" class="text-hei-muted hover:text-hei-text text-sm font-medium transition-colors duration-200">Work with Us</a>
     </div>
     <div class="hidden lg:flex items-center">
-      <a href="mailto:sagi@heiaxis.com?subject=Demo%20Request" class="bg-hei-blue text-white text-sm font-medium px-5 py-2 transition-opacity duration-200 hover:opacity-90" style="border-radius:999px;">Request a Demo</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagi%40heiaxis.com&su=Demo%20Request" target="_blank" rel="noopener noreferrer" aria-label="Request a Demo (opens Gmail)" class="bg-hei-blue text-white text-sm font-medium px-5 py-2 transition-opacity duration-200 hover:opacity-90" style="border-radius:999px;">Request a Demo</a>
     </div>
     <button id="hamburger-btn" class="lg:hidden flex flex-col gap-1.5 p-2 focus:outline-none" aria-label="Open menu" aria-expanded="false">
       <span class="block w-5 h-0.5" style="background:#1E3A5F;"></span>
@@ -107,14 +120,18 @@
       <a href="#contact" class="mobile-nav-link text-hei-muted hover:text-hei-text text-sm font-medium transition-colors py-1">Partnerships</a>
       <a href="#roi" class="mobile-nav-link text-hei-muted hover:text-hei-text text-sm font-medium transition-colors py-1">Investors</a>
       <a href="#contact" class="mobile-nav-link text-hei-muted hover:text-hei-text text-sm font-medium transition-colors py-1">Work with Us</a>
-      <a href="mailto:sagi@heiaxis.com?subject=Demo%20Request" class="mobile-nav-link bg-hei-blue text-white text-sm font-medium px-4 py-2 text-center transition-colors" style="border-radius:999px;">Request a Demo</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagi%40heiaxis.com&su=Demo%20Request" target="_blank" rel="noopener noreferrer" aria-label="Request a Demo (opens Gmail)" class="mobile-nav-link bg-hei-blue text-white text-sm font-medium px-4 py-2 text-center transition-colors" style="border-radius:999px;">Request a Demo</a>
     </div>
   </div>
 </nav>
 
 <section class="relative min-h-screen flex items-center overflow-hidden" style="padding-top:4rem;background:linear-gradient(135deg,#EEF4FF 0%,#F8FAFF 50%,#FFF8EE 100%);">
-  <div class="max-w-7xl mx-auto px-6 w-full py-24">
-    <div class="max-w-3xl">
+  <!-- Decorative floating orbs -->
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-6 w-full py-24 flex flex-col lg:flex-row items-start lg:items-center gap-16" style="position:relative;z-index:1;">
+    <!-- Left: text content -->
+    <div class="flex-1 max-w-2xl">
       <div class="hero-animate-1">
         <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#1D4ED8;">Institutional Control Architecture</span>
       </div>
@@ -126,9 +143,28 @@
         The institutional operating layer for Student Affairs — governing care delivery, vendor relationships, compliance readiness, and budget accountability across the full student journey.
       </p>
       <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 hero-animate-4">
-        <a href="mailto:sagi@heiaxis.com?subject=Demo%20Request" class="text-white font-semibold px-6 py-3 transition-colors duration-200 text-sm hover:opacity-90" style="background:#1D4ED8;border-radius:999px;">Request a Demo</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagi%40heiaxis.com&su=Demo%20Request" target="_blank" rel="noopener noreferrer" aria-label="Request a Demo (opens Gmail)" class="text-white font-semibold px-6 py-3 transition-colors duration-200 text-sm hover:opacity-90" style="background:#1D4ED8;border-radius:999px;">Request a Demo</a>
         <a href="#platform" class="text-sm font-medium transition-colors duration-200 flex items-center gap-1" style="color:#1D4ED8;">See the Architecture &rarr;</a>
       </div>
+    </div>
+    <!-- Right: campus image collage -->
+    <div class="flex-shrink-0 hidden lg:block hero-animate-5" style="width:440px;position:relative;height:540px;">
+      <!-- Top image — students on campus -->
+      <div class="campus-card" style="position:absolute;top:0;right:0;width:360px;height:265px;transform:rotate(2deg);">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=720&q=80&fit=crop&crop=center" alt="Students on campus" loading="eager" />
+      </div>
+      <!-- Bottom-left image — students studying together -->
+      <div class="campus-card" style="position:absolute;top:235px;left:0;width:295px;height:220px;transform:rotate(-1.5deg);">
+        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=590&q=80&fit=crop&crop=center" alt="Students studying together" loading="eager" />
+      </div>
+      <!-- Floating stat badge -->
+      <div class="float-badge" style="position:absolute;bottom:28px;right:8px;z-index:10;">
+        <div style="font-family:'Inter',sans-serif;font-weight:800;font-size:2rem;color:#1D4ED8;line-height:1;">41</div>
+        <div style="font-family:'Inter',sans-serif;font-size:0.68rem;color:#64748B;font-weight:500;margin-top:2px;">Institutions Researched</div>
+      </div>
+      <!-- Decorative accent dots -->
+      <div style="position:absolute;top:230px;right:346px;width:14px;height:14px;border-radius:50%;background:#F5A623;z-index:5;" aria-hidden="true"></div>
+      <div style="position:absolute;top:90px;left:10px;width:10px;height:10px;border-radius:50%;background:#1D4ED8;opacity:0.4;z-index:5;" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -238,6 +274,44 @@
 <div class="py-10 px-6 flex items-center justify-center" style="background:linear-gradient(135deg,#1D4ED8 0%,#1E3A5F 100%);">
   <p style="font-family:'Playfair Display',Georgia,serif;color:#ffffff;font-size:1.5rem;text-align:center;line-height:1.4;max-width:700px;">The control layer institutions have been missing.</p>
 </div>
+
+<!-- Campus Life Visual Section -->
+<section class="py-20" style="background:#F8FAFF;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="fade-up text-center mb-12">
+      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-hei-blue mb-4">The Campus Reality</span>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-hei-text" style="font-family:'Playfair Display',Georgia,serif;">
+        Real students. Real challenges. Real institutions.
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="campus-card fade-up" style="height:320px;">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&q=80&fit=crop&crop=center" alt="Students on campus" loading="lazy" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(30,58,95,0.82) 0%, transparent 55%);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:18px;left:18px;">
+          <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);">Challenge</span>
+          <p style="font-weight:600;color:#fff;font-size:0.95rem;margin-top:3px;">Fragmented Care Systems</p>
+        </div>
+      </div>
+      <div class="campus-card fade-up" style="height:320px;">
+        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=700&q=80&fit=crop&crop=center" alt="Students talking on campus" loading="lazy" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(30,58,95,0.82) 0%, transparent 55%);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:18px;left:18px;">
+          <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);">Outcome</span>
+          <p style="font-weight:600;color:#fff;font-size:0.95rem;margin-top:3px;">Students Who Fall Through Gaps</p>
+        </div>
+      </div>
+      <div class="campus-card fade-up" style="height:320px;">
+        <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=700&q=80&fit=crop&crop=center" alt="Student with laptop working" loading="lazy" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(29,78,216,0.82) 0%, transparent 55%);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:18px;left:18px;">
+          <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);">Solution</span>
+          <p style="font-weight:600;color:#fff;font-size:0.95rem;margin-top:3px;">The HEIAxis Control Layer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="py-28" id="platform" style="background:#F0F4FF;">
   <div class="max-w-7xl mx-auto px-6">
@@ -453,8 +527,8 @@
       HEIAxis is built for institutions that take governance seriously — and are ready to lead on operational accountability, compliance readiness, and evidence-based student outcomes.
     </p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="mailto:sagi@heiaxis.com?subject=Demo%20Request" class="bg-white font-semibold px-8 py-3 transition-colors duration-200 text-sm hover:bg-hei-light" style="color:#1D4ED8;border-radius:999px;">Request a Demo</a>
-      <a href="mailto:sagi@heiaxis.com" class="text-white text-sm font-medium transition-colors duration-200 flex items-center gap-1" style="opacity:0.9;">Contact the Team &rarr;</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagi%40heiaxis.com&su=Demo%20Request" target="_blank" rel="noopener noreferrer" aria-label="Request a Demo (opens Gmail)" class="bg-white font-semibold px-8 py-3 transition-colors duration-200 text-sm hover:bg-hei-light" style="color:#1D4ED8;border-radius:999px;">Request a Demo</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagi%40heiaxis.com&su=Contact%20HEIAxis" target="_blank" rel="noopener noreferrer" aria-label="Contact the team (opens Gmail)" class="text-white text-sm font-medium transition-colors duration-200 flex items-center gap-1" style="opacity:0.9;">Contact the Team &rarr;</a>
     </div>
   </div>
 </section>
@@ -463,7 +537,9 @@
   <div class="max-w-7xl mx-auto">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-8">
       <a href="#" class="flex items-center" aria-label="HEIAxis home" style="text-decoration:none;">
-        <img src="LOGO.png" alt="HEIAxis" style="height:36px;width:auto;display:block;filter:brightness(0) invert(1);" />
+        <span style="display:inline-block;background:#ffffff;border-radius:8px;padding:5px 12px;line-height:0;">
+          <img src="LOGO.png" alt="HEIAxis" style="height:30px;width:auto;display:block;" />
+        </span>
       </a>
       <div class="flex flex-wrap gap-6">
         <a href="#platform" class="footer-link text-sm">Platform</a>
@@ -475,7 +551,7 @@
         <a href="#team" class="footer-link text-sm">Team</a>
         <a href="#contact" class="footer-link text-sm">Work with Us</a>
       </div>
-      <a href="mailto:sagi@heiaxis.com" class="footer-link text-sm">sagi@heiaxis.com</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagi%40heiaxis.com&su=Contact%20HEIAxis" target="_blank" rel="noopener noreferrer" aria-label="Email sagi@heiaxis.com (opens Gmail)" class="footer-link text-sm">sagi@heiaxis.com</a>
     </div>
     <div class="pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3" style="border-top:1px solid rgba(255,255,255,0.12);">
       <p class="footer-copy text-xs">&copy; 2025 HEIAxis. All rights reserved.</p>
