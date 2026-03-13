@@ -79,7 +79,7 @@
     .hero-orb-2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(245,166,35,0.1) 0%, transparent 70%); filter: blur(50px); right: 10%; bottom: 8%; animation: float-medium 7s ease-in-out infinite 1.5s; z-index: 0; }
     @media (prefers-reduced-motion: reduce) { .hero-orb-1, .hero-orb-2 { animation: none; } }
 
-    .campus-card { border-radius: 18px; overflow: hidden; box-shadow: 0 14px 40px rgba(30,58,95,0.16); position: relative; }
+    .campus-card { border-radius: 18px; overflow: hidden; box-shadow: 0 14px 40px rgba(30,58,95,0.16); position: relative; background: linear-gradient(135deg, #1E3A5F 0%, #1D4ED8 100%); }
     .campus-card img { transition: transform 0.6s ease; display: block; width: 100%; height: 100%; object-fit: cover; }
     .campus-card:hover img { transform: scale(1.05); }
 
@@ -91,7 +91,7 @@
 <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="#" class="flex items-center" aria-label="HEIAxis home" style="text-decoration:none;">
-      <img src="LOGO.png" alt="HEIAxis" style="height:52px;width:auto;display:block;mix-blend-mode:multiply;" />
+      <img src="LOGO.png" alt="HEIAxis" style="height:56px;width:auto;display:block;" />
     </a>
     <div class="hidden lg:flex items-center gap-6">
       <a href="#platform" class="text-hei-muted hover:text-hei-text text-sm font-medium transition-colors duration-200">Platform</a>
@@ -151,11 +151,11 @@
     <div class="flex-shrink-0 hidden lg:block hero-animate-5" style="width:440px;position:relative;height:540px;">
       <!-- Top image — students on campus -->
       <div class="campus-card" style="position:absolute;top:0;right:0;width:360px;height:265px;transform:rotate(2deg);">
-        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=720&q=80&fit=crop&crop=center" alt="Students on campus" loading="eager" />
+        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=720&q=80" alt="Students on campus" loading="eager" onerror="this.remove()" />
       </div>
       <!-- Bottom-left image — students studying together -->
       <div class="campus-card" style="position:absolute;top:235px;left:0;width:295px;height:220px;transform:rotate(-1.5deg);">
-        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=590&q=80&fit=crop&crop=center" alt="Students studying together" loading="eager" />
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=590&q=80" alt="Students studying together" loading="eager" onerror="this.remove()" />
       </div>
       <!-- Floating stat badge -->
       <div class="float-badge" style="position:absolute;bottom:28px;right:8px;z-index:10;">
@@ -286,7 +286,7 @@
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
       <div class="campus-card fade-up" style="height:320px;">
-        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&q=80&fit=crop&crop=center" alt="Students on campus" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Students on campus" loading="lazy" onerror="this.remove()" />
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(30,58,95,0.82) 0%, transparent 55%);pointer-events:none;"></div>
         <div style="position:absolute;bottom:18px;left:18px;">
           <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);">Challenge</span>
@@ -294,7 +294,7 @@
         </div>
       </div>
       <div class="campus-card fade-up" style="height:320px;">
-        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=700&q=80&fit=crop&crop=center" alt="Students talking on campus" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Students talking on campus" loading="lazy" onerror="this.remove()" />
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(30,58,95,0.82) 0%, transparent 55%);pointer-events:none;"></div>
         <div style="position:absolute;bottom:18px;left:18px;">
           <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);">Outcome</span>
@@ -302,7 +302,7 @@
         </div>
       </div>
       <div class="campus-card fade-up" style="height:320px;">
-        <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=700&q=80&fit=crop&crop=center" alt="Student with laptop working" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Student with laptop working" loading="lazy" onerror="this.remove()" />
         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(29,78,216,0.82) 0%, transparent 55%);pointer-events:none;"></div>
         <div style="position:absolute;bottom:18px;left:18px;">
           <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);">Solution</span>
@@ -537,9 +537,7 @@
   <div class="max-w-7xl mx-auto">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-8">
       <a href="#" class="flex items-center" aria-label="HEIAxis home" style="text-decoration:none;">
-        <span style="display:inline-block;background:#ffffff;border-radius:8px;padding:5px 12px;line-height:0;">
-          <img src="LOGO.png" alt="HEIAxis" style="height:30px;width:auto;display:block;" />
-        </span>
+        <span style="font-family:'Playfair Display',Georgia,serif;color:#ffffff;font-size:1.4rem;font-weight:700;letter-spacing:-0.01em;line-height:1;">HEI<span style="color:#93C5FD;">Axis</span></span>
       </a>
       <div class="flex flex-wrap gap-6">
         <a href="#platform" class="footer-link text-sm">Platform</a>
