@@ -7,7 +7,7 @@
   <meta name="description" content="HEIAxis is the governed operating layer for Student Affairs — routing, escalation, evidence, compliance, vendor governance, and budget intelligence. Campus-owned by design." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -24,8 +24,8 @@
             "hei-light": "#F8FAFF",
           },
           fontFamily: {
-            "display": ["Playfair Display", "Georgia", "serif"],
-            "body": ["Inter", "system-ui", "sans-serif"],
+            "display": ["DM Serif Display", "Georgia", "serif"],
+            "body": ["DM Sans", "system-ui", "sans-serif"],
           }
         }
       }
@@ -34,7 +34,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-    body { background-color: #FFFFFF; color: #1E3A5F; font-family: 'Inter', system-ui, sans-serif; margin: 0; }
+    body { background-color: #FFFFFF; color: #1E3A5F; font-family: 'DM Sans', system-ui, sans-serif; margin: 0; }
 
     .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -44,15 +44,15 @@
     .slide-right.visible { opacity: 1; transform: translateX(0); }
 
     #main-nav { transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
-    #main-nav.scrolled { background-color: rgba(255,255,255,0.97); border-bottom: 1px solid #DDE4F0; box-shadow: 0 2px 12px rgba(30,58,95,0.08); }
+    #main-nav.scrolled { background-color: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #DDE4F0; box-shadow: 0 2px 20px rgba(30,58,95,0.06); }
 
     #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; background: #FFFFFF; }
     #mobile-menu.open { max-height: 500px; }
 
     .arch-layer { transition: background-color 0.2s ease; }
-    .arch-layer:hover { background-color: #F0F4FF; }
+    .arch-layer:hover { background-color: #EEF4FF; }
 
-    .stat-number { font-family: 'Inter', system-ui, sans-serif; font-weight: 700; line-height: 1; letter-spacing: -0.04em; }
+    .stat-number { font-family: 'DM Sans', system-ui, sans-serif; font-weight: 700; line-height: 1; letter-spacing: -0.04em; }
 
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     .hero-animate-1 { animation: fadeInUp 0.8s ease 0.1s both; }
@@ -125,23 +125,20 @@
   </div>
 </nav>
 
-<section class="relative min-h-screen flex items-center overflow-hidden" style="padding-top:4rem;background:linear-gradient(135deg,#EEF4FF 0%,#F8FAFF 50%,#FFF8EE 100%);">
-  <!-- Decorative floating orbs -->
+<section class="relative min-h-screen flex items-center overflow-hidden" style="padding-top:4rem;background:linear-gradient(135deg,#EEF4FF 0%,#F8FAFF 50%,#FFF8EE 100%);border-top:3px solid #1D4ED8;">  <!-- Decorative floating orbs -->
   <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
   <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
   <div class="max-w-7xl mx-auto px-6 w-full py-24 flex flex-col lg:flex-row items-start lg:items-center gap-16" style="position:relative;z-index:1;">
     <!-- Left: text content -->
     <div class="flex-1 max-w-2xl">
-      <div class="hero-animate-1">
-        <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#1D4ED8;">The control layer for Student Affairs and campus care</span>
-      </div>
-      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 hero-animate-2" style="font-family:'Playfair Display',Georgia,serif;">
-        <span style="color:#1E3A5F;">Moving from fragmented services to institutional governance.</span><br \/>
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 hero-animate-2" style="font-family:'DM Serif Display',Georgia,serif;letter-spacing:-0.02em;">
         <span style="color:#1D4ED8;">HEIAxis turns fragmented activity into governed execution, auditable outcomes, and budget-backed impact.</span>
       </h1>
-      <p class="text-lg md:text-xl leading-relaxed mb-10 hero-animate-3" style="color:#64748B;">
-        $22B in annual spend across the Student Affairs and campus care domains HEIAxis is built to govern | 19.4M U.S. postsecondary students | 560+ target institutions above 10,000 students
-      </p>
+      <div class="flex flex-wrap gap-3 hero-animate-3 mb-10">
+        <span style="display:inline-flex;align-items:center;background:rgba(29,78,216,0.08);color:#1D4ED8;font-size:0.78rem;font-weight:600;padding:6px 14px;border-radius:999px;border:1px solid rgba(29,78,216,0.18);">$22B governed market</span>
+        <span style="display:inline-flex;align-items:center;background:rgba(29,78,216,0.08);color:#1D4ED8;font-size:0.78rem;font-weight:600;padding:6px 14px;border-radius:999px;border:1px solid rgba(29,78,216,0.18);">19.4M students</span>
+        <span style="display:inline-flex;align-items:center;background:rgba(29,78,216,0.08);color:#1D4ED8;font-size:0.78rem;font-weight:600;padding:6px 14px;border-radius:999px;border:1px solid rgba(29,78,216,0.18);">560+ target institutions</span>
+      </div>
       <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 hero-animate-4">
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagi%40heiaxis.com&su=Demo%20Request" target="_blank" rel="noopener noreferrer" aria-label="Request a Demo (opens Gmail)" class="text-white font-semibold px-6 py-3 transition-colors duration-200 text-sm hover:opacity-90" style="background:#1D4ED8;border-radius:999px;">Request a Demo</a>
         <a href="#platform" class="text-sm font-medium transition-colors duration-200 flex items-center gap-1" style="color:#1D4ED8;">See the Architecture &rarr;</a>
@@ -159,8 +156,8 @@
       </div>
       <!-- Floating stat badge -->
       <div class="float-badge" style="position:absolute;bottom:28px;right:8px;z-index:10;">
-        <div style="font-family:'Inter',sans-serif;font-weight:800;font-size:2rem;color:#1D4ED8;line-height:1;">41</div>
-        <div style="font-family:'Inter',sans-serif;font-size:0.68rem;color:#64748B;font-weight:500;margin-top:2px;">Institutions Researched</div>
+        <div style="font-family:'DM Sans',sans-serif;font-weight:800;font-size:2rem;color:#1D4ED8;line-height:1;">41</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:0.68rem;color:#64748B;font-weight:500;margin-top:2px;">Institutions Researched</div>
       </div>
       <!-- Decorative accent dots -->
       <div style="position:absolute;top:230px;right:346px;width:14px;height:14px;border-radius:50%;background:#F5A623;z-index:5;" aria-hidden="true"></div>
@@ -168,16 +165,12 @@
     </div>
   </div>
 </section>
-<section class="py-28" id="gap" style="background:#F0F4FF;">
+<section class="py-20" id="gap" style="background:#F0F4FF;border-top:1px solid #DDE4F0;">
   <div class="max-w-7xl mx-auto px-6">
     <div class="fade-up">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-hei-blue mb-6">Student Affairs already carries real spend. It still lacks a smart, unified control layer.</span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-hei-text leading-tight mb-8" style="font-family:'Playfair Display',Georgia,serif;max-width:640px;">
-        $55B+ in broad annual Student Affairs spend. ~$22B in the campus care and adjacent domains HEIAxis governs first.
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-hei-text leading-tight mb-8" style="font-family:'DM Serif Display',Georgia,serif;max-width:640px;">
+        $55B in Student Affairs spend. The control layer is missing.
       </h2>
-      <p class="text-hei-muted text-lg leading-relaxed max-w-3xl mb-16">
-        U.S. higher education already carries $55B+ in broad annual Student Affairs spend. HEIAxis is initially built to govern the ~$22B campus care and adjacent support domains where fragmentation, under-governance, and budget leakage are most acute.
-      </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-16">
       <div class="fade-up">
@@ -201,34 +194,31 @@
   </div>
 </section>
 
-<section class="py-28" id="why-now" style="background:#FFFFFF;">
+<section class="py-20" id="why-now" style="background:#FFFFFF;">
   <div class="max-w-7xl mx-auto px-6">
     <div class="fade-up mb-16">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-hei-blue mb-6">The Breakpoint</span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-hei-text leading-tight" style="font-family:'Playfair Display',Georgia,serif;max-width:640px;">
+      <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#1D4ED8;letter-spacing:0.12em;">The Breakpoint</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-hei-text leading-tight" style="font-family:'DM Serif Display',Georgia,serif;max-width:640px;">
         Three forces converged. The control-layer moment is now.
       </h2>
     </div>
     <div style="border-top:1px solid #DDE4F0;border-bottom:1px solid #DDE4F0;">
       <div class="py-10 flex flex-col md:flex-row md:items-start gap-6 md:gap-12 fade-up" style="border-bottom:1px solid #DDE4F0;">
-        <div class="flex-shrink-0 font-bold text-5xl md:text-6xl" style="color:#DDE4F0;min-width:80px;font-family:'Inter',sans-serif;">01</div>
+        <div class="flex-shrink-0 font-bold text-5xl md:text-6xl" style="color:#DDE4F0;min-width:80px;font-family:'DM Sans',sans-serif;">01</div>
         <div class="flex-1">
-          <h3 class="text-hei-text font-semibold text-xl mb-3">Mental health demand is structurally above capacity</h3>
-          <p class="text-hei-muted leading-relaxed max-w-2xl">Students are arriving with higher complexity, broader support needs, and weaker follow-through across fragmented systems.</p>
+          <h3 class="text-hei-text font-semibold text-xl">Mental health demand is structurally above capacity</h3>
         </div>
       </div>
       <div class="py-10 flex flex-col md:flex-row md:items-start gap-6 md:gap-12 fade-up" style="border-bottom:1px solid #DDE4F0;">
-        <div class="flex-shrink-0 font-bold text-5xl md:text-6xl" style="color:#DDE4F0;min-width:80px;font-family:'Inter',sans-serif;">02</div>
+        <div class="flex-shrink-0 font-bold text-5xl md:text-6xl" style="color:#DDE4F0;min-width:80px;font-family:'DM Sans',sans-serif;">02</div>
         <div class="flex-1">
-          <h3 class="text-hei-text font-semibold text-xl mb-3">An AI compliance gap is opening across the academy</h3>
-          <p class="text-hei-muted leading-relaxed max-w-2xl">Institutions are under pressure to adopt GenAI, connect it to student support and academic success, and do so without creating black-box exposure, uncontrolled decisioning, or audit risk.</p>
+          <h3 class="text-hei-text font-semibold text-xl">An AI compliance gap is opening across the academy</h3>
         </div>
       </div>
       <div class="py-10 flex flex-col md:flex-row md:items-start gap-6 md:gap-12 fade-up">
-        <div class="flex-shrink-0 font-bold text-5xl md:text-6xl" style="color:#DDE4F0;min-width:80px;font-family:'Inter',sans-serif;">03</div>
+        <div class="flex-shrink-0 font-bold text-5xl md:text-6xl" style="color:#DDE4F0;min-width:80px;font-family:'DM Sans',sans-serif;">03</div>
         <div class="flex-1">
-          <h3 class="text-hei-text font-semibold text-xl mb-3">Student support is now tied directly to retention, workforce readiness, and institutional performance</h3>
-          <p class="text-hei-muted leading-relaxed max-w-2xl">What used to be &lsquo;student services&rsquo; now drives persistence, outcomes, employability, brand risk, and funding logic.</p>
+          <h3 class="text-hei-text font-semibold text-xl">Student support is now tied directly to retention, workforce readiness, and institutional performance</h3>
         </div>
       </div>
     </div>
@@ -237,9 +227,9 @@
 
 <section id="before-after" style="overflow:hidden;">
   <div class="flex flex-col lg:flex-row">
-    <div class="flex-1 px-8 md:px-16 py-20 slide-left" style="background:#1E3A5F;">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:rgba(255,255,255,0.6);">Before HEIAxis</span>
-      <h3 class="font-display text-3xl md:text-4xl font-bold mb-10" style="font-family:'Playfair Display',Georgia,serif;color:#E2E8F0;">Fragmented by Design</h3>
+    <div class="flex-1 px-8 md:px-16 py-20 slide-left" style="background:#1E3A5F;box-shadow:inset 0 1px 0 rgba(255,255,255,0.08);">
+      <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:rgba(255,255,255,0.6);letter-spacing:0.12em;">Before HEIAxis</span>
+      <h3 class="font-display text-3xl md:text-4xl font-bold mb-10" style="font-family:'DM Serif Display',Georgia,serif;color:#E2E8F0;">Fragmented by Design</h3>
       <ul class="flex flex-col gap-5">
         <li class="flex items-start gap-3 text-sm leading-relaxed" style="color:rgba(255,255,255,0.6);"><span class="flex-shrink-0 mt-0.5">&mdash;</span><span>Departments operate in isolated silos</span></li>
         <li class="flex items-start gap-3 text-sm leading-relaxed" style="color:rgba(255,255,255,0.6);"><span class="flex-shrink-0 mt-0.5">&mdash;</span><span>Escalations fall through inter-departmental gaps</span></li>
@@ -252,8 +242,8 @@
     <div class="hidden lg:block w-px" style="background:#DDE4F0;"></div>
     <div class="lg:hidden h-px" style="background:#DDE4F0;"></div>
     <div class="flex-1 px-8 md:px-16 py-20 slide-right" style="background:#F8FAFF;">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#1D4ED8;">After HEIAxis</span>
-      <h3 class="font-display text-3xl md:text-4xl font-bold mb-10" style="font-family:'Playfair Display',Georgia,serif;color:#1E3A5F;">One Governed Layer</h3>
+      <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#1D4ED8;letter-spacing:0.12em;">After HEIAxis</span>
+      <h3 class="font-display text-3xl md:text-4xl font-bold mb-10" style="font-family:'DM Serif Display',Georgia,serif;color:#1E3A5F;">One Governed Layer</h3>
       <ul class="flex flex-col gap-5">
         <li class="flex items-start gap-3 text-sm leading-relaxed" style="color:#374151;"><span class="flex-shrink-0 mt-0.5" style="color:#1D4ED8;">&rarr;</span><span>One governed flow across the full Student Affairs unit</span></li>
         <li class="flex items-start gap-3 text-sm leading-relaxed" style="color:#374151;"><span class="flex-shrink-0 mt-0.5" style="color:#1D4ED8;">&rarr;</span><span>Routing, ownership, and escalation tracked automatically</span></li>
@@ -264,26 +254,15 @@
       </ul>
     </div>
   </div>
-  <div class="py-12 px-6 text-center fade-up" style="background:#1E3A5F;border-top:1px solid rgba(255,255,255,0.12);">
-    <p class="font-semibold text-lg md:text-xl max-w-3xl mx-auto" style="color:#E2E8F0;">
-      The market has tools for fragments. HEIAxis installs the layer above them.
-    </p>
-  </div>
 </section>
 
 <div class="py-10 px-6 flex items-center justify-center" style="background:linear-gradient(135deg,#1D4ED8 0%,#1E3A5F 100%);">
-  <p style="font-family:'Playfair Display',Georgia,serif;color:#ffffff;font-size:1.5rem;text-align:center;line-height:1.4;max-width:700px;">The control layer institutions have been missing.</p>
+  <p style="font-family:'DM Serif Display',Georgia,serif;color:#ffffff;font-size:1.5rem;text-align:center;line-height:1.4;max-width:700px;">The control layer institutions have been missing.</p>
 </div>
 
 <!-- Campus Life Visual Section -->
 <section class="py-20" style="background:#F8FAFF;">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="fade-up text-center mb-12">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-hei-blue mb-4">The Campus Reality</span>
-      <h2 class="font-display text-3xl md:text-4xl font-bold text-hei-text" style="font-family:'Playfair Display',Georgia,serif;">
-        Real students. Real challenges. Real institutions.
-      </h2>
-    </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
       <div class="campus-card fade-up" style="height:320px;">
         <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Student at a desk looking stressed" loading="lazy" onerror="this.remove()" />
@@ -313,14 +292,13 @@
   </div>
 </section>
 
-<section class="py-28" id="platform" style="background:#F0F4FF;">
+<section class="py-20" id="platform" style="background:#F0F4FF;">
   <div class="max-w-7xl mx-auto px-6">
     <div class="fade-up mb-16">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-hei-blue mb-6">The Platform</span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-hei-text leading-tight mb-4" style="font-family:'Playfair Display',Georgia,serif;max-width:580px;">
+      <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#1D4ED8;letter-spacing:0.12em;">The Platform</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-hei-text leading-tight mb-4" style="font-family:'DM Serif Display',Georgia,serif;max-width:580px;">
         One governed flow. Five layers. Human-governed AI.
       </h2>
-      <p class="text-hei-muted text-lg max-w-2xl">Student Signal &rarr; Triage &rarr; Owned Action &rarr; Follow-Through &rarr; Escalation &rarr; Leadership Proof. Deploys alongside existing SIS, EHR, and CRM systems — no rip-and-replace. The campus retains ownership of data, logic, and vendor relationships from day one.</p>
     </div>
     <div class="rounded-lg overflow-hidden border border-hei-border" style="background:#FFFFFF;">
       <div class="arch-layer flex flex-col md:flex-row md:items-center gap-4 md:gap-8 px-6 py-6 border-b border-hei-border" style="border-left:4px solid #63B3ED;">
@@ -359,77 +337,58 @@
         </div>
       </div>
     </div>
-    <div class="mt-6 fade-up rounded-lg border border-hei-border px-8 py-6" style="background:#FFFFFF;">
-      <p class="text-hei-muted text-sm leading-relaxed">
-        <span class="text-hei-text font-medium">Role-based copilots support:</span> Counselor | Director of Counseling | Dean of Students | VP of Student Affairs. AI is used for triage, prioritization, drafting, and workflow support. Final action, escalation, exception handling, and policy decisions remain human-governed.
-      </p>
-    </div>
-    <div class="mt-6 fade-up">
-      <p class="text-hei-text font-semibold text-lg md:text-xl max-w-3xl">
-        HEIAxis does not add another service. It governs how Student Affairs and campus care operate as one system.
-      </p>
-    </div>
   </div>
 </section>
 
-<section class="py-28" id="proof" style="background:#FFFFFF;">
+<section class="py-20" id="proof" style="background:#FFFFFF;">
   <div class="max-w-7xl mx-auto px-6">
     <div class="fade-up mb-16">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#1D4ED8;">Field Evidence</span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight" style="font-family:'Playfair Display',Georgia,serif;color:#1E3A5F;max-width:640px;">
+      <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#1D4ED8;letter-spacing:0.12em;">Field Evidence</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight" style="font-family:'DM Serif Display',Georgia,serif;color:#1E3A5F;max-width:640px;">
         Field-validated architecture, not assumptions.
       </h2>
     </div>
-    <div class="relative w-full overflow-hidden rounded-lg mb-12 fade-up flex items-end" style="height:140px;background:linear-gradient(135deg,#1E3A5F 0%,#1D4ED8 100%);">
-      <p class="text-white text-sm font-medium px-6 py-4" style="text-shadow:0 1px 4px rgba(0,0,0,0.4);">Primary research across 41 institutions, with 1,100+ student interviews and 137 staff interviews.</p>
-    </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mb-20 mt-12">
       <div class="fade-up">
-        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1E3A5F;" data-countup="1100" data-suffix="+">0+</div>
+        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1D4ED8;" data-countup="1100" data-suffix="+">0+</div>
         <div class="text-sm" style="color:#64748B;">Student interviews in foundational research</div>
       </div>
       <div class="fade-up">
-        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1E3A5F;" data-countup="137">0</div>
+        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1D4ED8;" data-countup="137">0</div>
         <div class="text-sm" style="color:#64748B;">Staff interviews across 41 institutions</div>
       </div>
       <div class="fade-up">
-        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1E3A5F;" data-countup="84" data-suffix="%">0%</div>
+        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1D4ED8;" data-countup="84" data-suffix="%">0%</div>
         <div class="text-sm" style="color:#64748B;">Cohort completion rate — alpha cohort</div>
       </div>
       <div class="fade-up">
-        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1E3A5F;" data-countup="65" data-display="6.5" data-suffix="&times;">0&times;</div>
+        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1D4ED8;" data-countup="65" data-display="6.5" data-suffix="&times;">0&times;</div>
         <div class="text-sm" style="color:#64748B;">Stronger week-to-week retention versus comparable non-governed cohort baselines</div>
       </div>
       <div class="fade-up">
-        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1E3A5F;" data-countup="41">0</div>
+        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1D4ED8;" data-countup="41">0</div>
         <div class="text-sm" style="color:#64748B;">Institutions in primary research</div>
       </div>
       <div class="fade-up">
-        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1E3A5F;" data-countup="88" data-suffix="%">0%</div>
+        <div class="stat-number mb-2" style="font-size:clamp(48px,6vw,80px);color:#1D4ED8;" data-countup="88" data-suffix="%">0%</div>
         <div class="text-sm" style="color:#64748B;">Week-to-week retention — alpha cohort</div>
       </div>
     </div>
     <div class="fade-up max-w-3xl" style="border-left:3px solid #1D4ED8;padding-left:24px;">
-      <p class="text-lg italic font-medium leading-relaxed" style="color:#1E3A5F;font-family:'Inter',sans-serif;">
+      <p class="text-lg italic font-medium leading-relaxed" style="color:#1E3A5F;font-family:'DM Sans',sans-serif;">
         &ldquo;Campuses expand support when routing, ownership, escalation, and data remain institution-controlled.&rdquo;
-      </p>
-    </div>
-    <div class="fade-up mt-10 max-w-3xl" style="border-left:3px solid #1D4ED8;padding-left:24px;">
-      <p class="text-base leading-relaxed font-medium" style="color:#1E3A5F;">
-        Commercial momentum is early but real: 2 signed LOIs with large institutions within 45 days, and 6 additional large institutions in active design-partner and procurement discussions.
       </p>
     </div>
   </div>
 </section>
 
-<section class="py-28" id="roi" style="background:#1E3A5F;">
+<section class="py-20" id="roi" style="background:#1E3A5F;">
   <div class="max-w-7xl mx-auto px-6">
     <div class="fade-up mb-16">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#93C5FD;">Institutional ROI</span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-4" style="font-family:'Playfair Display',Georgia,serif;max-width:680px;color:#FFFFFF;">
+      <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#93C5FD;letter-spacing:0.12em;">Institutional ROI</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-4" style="font-family:'DM Serif Display',Georgia,serif;max-width:680px;color:#FFFFFF;">
         For a 10,000+ student campus: $3.2M&ndash;$5.0M estimated net annual gain.
       </h2>
-      <p class="text-sm max-w-xl" style="color:rgba(255,255,255,0.7);">Illustrative model based on institutional research. Actual outcomes vary by institution profile, current vendor landscape, and deployment scope.</p>
     </div>
     <div class="rounded-lg overflow-hidden max-w-3xl fade-up" style="border:1px solid rgba(255,255,255,0.12);">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-6 py-5" style="background:rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.12);">
@@ -464,22 +423,14 @@
         </div>
       </div>
     </div>
-    <div class="mt-6 fade-up">
-      <p class="text-sm max-w-xl leading-relaxed" style="color:rgba(255,255,255,0.5);">
-        This ROI framework is modeled from institutional cost structures and support-flow failure points, and is intended to show the economic logic of the buying case before campus-specific proof is available at scale.
-      </p>
-      <p class="text-sm max-w-xl leading-relaxed mt-4" style="color:rgba(255,255,255,0.5);">
-        Institutional engagement is structured in tiers, with value-based participation tied to verified uplift, governed savings, and outcome-linked value creation. Pricing available upon request.
-      </p>
-    </div>
   </div>
 </section>
 
-<section class="py-28" id="team" style="background:#FFFFFF;">
+<section class="py-20" id="team" style="background:#FFFFFF;">
   <div class="max-w-7xl mx-auto px-6">
     <div class="fade-up mb-16 text-center">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-hei-blue mb-6">The People Behind HEIAxis</span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold text-hei-text leading-tight" style="font-family:'Playfair Display',Georgia,serif;max-width:640px;margin:0 auto;">
+      <span class="inline-block text-xs font-semibold tracking-widest uppercase mb-6" style="color:#1D4ED8;letter-spacing:0.12em;">The People Behind HEIAxis</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-hei-text leading-tight" style="font-family:'DM Serif Display',Georgia,serif;max-width:640px;margin:0 auto;">
         Built by practitioners. Grounded in institutional reality.
       </h2>
     </div>
@@ -492,90 +443,30 @@
         </div>
       </div>
       <div class="flex-1">
-        <h3 class="font-display text-2xl md:text-3xl font-bold text-hei-text mb-1" style="font-family:'Playfair Display',Georgia,serif;">Sagi Gilad</h3>
+        <h3 class="font-display text-2xl md:text-3xl font-bold text-hei-text mb-1" style="font-family:'DM Serif Display',Georgia,serif;">Sagi Gilad</h3>
         <p class="text-hei-blue font-semibold text-sm mb-3">Founder &amp; CEO</p>
         <a href="https://www.linkedin.com/in/sagi-gilad" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium mb-8 hover:opacity-80 transition-opacity" style="color:#0A66C2;text-decoration:none;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           linkedin.com/in/sagi-gilad
         </a>
-
-        <!-- Bio: 3 parallel rows -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-5 rounded-xl fade-up" style="background:#F0F4FF;border:1px solid #DDE4F0;">
-            <div class="text-hei-blue font-bold text-xs tracking-widest uppercase mb-2">Background</div>
-            <p class="text-hei-muted text-sm leading-relaxed">Practitioner and researcher with deep experience in higher-education Student Affairs operations, institutional governance, and organizational design across leading universities.</p>
-          </div>
-          <div class="p-5 rounded-xl fade-up" style="background:#F0F4FF;border:1px solid #DDE4F0;">
-            <div class="text-hei-blue font-bold text-xs tracking-widest uppercase mb-2">Research</div>
-            <p class="text-hei-muted text-sm leading-relaxed">Led the foundational study spanning 41 institutions, 137 staff interviews, and 1,100+ student voices — mapping the operating failures that HEIAxis was purpose-built to solve.</p>
-          </div>
-          <div class="p-5 rounded-xl fade-up" style="background:#F0F4FF;border:1px solid #DDE4F0;">
-            <div class="text-hei-blue font-bold text-xs tracking-widest uppercase mb-2">Mission</div>
-            <p class="text-hei-muted text-sm leading-relaxed">Committed to building the infrastructure that gives every institution the governance architecture it needs to fulfill its responsibility to student wellbeing and institutional integrity.</p>
-          </div>
-        </div>
+        <p class="text-hei-muted text-sm leading-relaxed max-w-xl mb-8">Practitioner and researcher. Led primary research across 41 institutions and 1,100+ student voices. Building the governed infrastructure Student Affairs has been missing.</p>
       </div>
-    </div>
-
-    <!-- Our Story -->
-    <div class="fade-up max-w-3xl" style="border-top:1px solid #DDE4F0;padding-top:48px;">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-hei-blue mb-6">Our Story</span>
-      <h3 class="font-display text-3xl md:text-4xl font-bold text-hei-text leading-tight mb-6" style="font-family:'Playfair Display',Georgia,serif;">
-        We started where the problem was — inside the institution.
-      </h3>
-      <p class="text-hei-muted text-lg leading-relaxed mb-5">
-        HEIAxis was born out of years of firsthand experience in Student Affairs — watching well-intentioned teams fail their students not from lack of care, but from lack of infrastructure. Escalations fell through gaps. Vendors accumulated without accountability. Compliance rested on manual effort. Budget decisions were made without visibility.
-      </p>
-      <p class="text-hei-muted text-lg leading-relaxed mb-5">
-        We spent years mapping these failures across 41 institutions before writing a single line of code. The insight was consistent everywhere: the problem isn't the people or the programs — it's the absence of a governed operating layer that ties everything together.
-      </p>
-      <p class="text-hei-muted text-lg leading-relaxed">
-        HEIAxis is that layer. Built campus-first, governance-first, and evidence-first — by a team that has lived the operational reality it now exists to fix.
-      </p>
     </div>
   </div>
 </section>
 
 <section class="py-28 px-6 text-center fade-up" id="contact" style="background:linear-gradient(135deg,#1D4ED8 0%,#1E3A5F 100%);">
   <div class="max-w-3xl mx-auto">
-    <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" style="font-family:'Playfair Display',Georgia,serif;">
+    <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" style="font-family:'DM Serif Display',Georgia,serif;letter-spacing:-0.02em;">
       Your institution is already carrying the responsibility.<br \/>
       It&rsquo;s time to govern it with the architecture it deserves.
     </h2>
-    <p class="text-lg mb-10 leading-relaxed" style="color:rgba(255,255,255,0.85);">
-      HEIAxis is built for institutions that take governance seriously — and are ready to lead on operational accountability, compliance readiness, and evidence-based student outcomes.
-    </p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagi%40heiaxis.com&su=Demo%20Request" target="_blank" rel="noopener noreferrer" aria-label="Request a Demo (opens Gmail)" class="bg-white font-semibold px-8 py-3 transition-colors duration-200 text-sm hover:bg-hei-light" style="color:#1D4ED8;border-radius:999px;">Request a Demo</a>
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagi%40heiaxis.com&su=Contact%20HEIAxis" target="_blank" rel="noopener noreferrer" aria-label="Contact the team (opens Gmail)" class="text-white text-sm font-medium transition-colors duration-200 flex items-center gap-1" style="opacity:0.9;">Contact the Team &rarr;</a>
     </div>
   </div>
 </section>
-
-<footer class="py-12 px-6" style="background:#1E3A5F;border-top:1px solid rgba(255,255,255,0.12);">
-  <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-8">
-      <a href="#" class="flex items-center" aria-label="HEIAxis home" style="text-decoration:none;">
-        <span style="font-family:'Playfair Display',Georgia,serif;color:#ffffff;font-size:1.4rem;font-weight:700;letter-spacing:-0.01em;line-height:1;">HEI<span style="color:#93C5FD;">Axis</span></span>
-      </a>
-      <div class="flex flex-wrap gap-6">
-        <a href="#platform" class="footer-link text-sm">Platform</a>
-        <a href="#why-now" class="footer-link text-sm">Why Now</a>
-        <a href="#proof" class="footer-link text-sm">Proof</a>
-        <a href="#platform" class="footer-link text-sm">HE Institutions</a>
-        <a href="#contact" class="footer-link text-sm">Partnerships</a>
-        <a href="#roi" class="footer-link text-sm">Investors</a>
-        <a href="#team" class="footer-link text-sm">Team</a>
-        <a href="#contact" class="footer-link text-sm">Work with Us</a>
-      </div>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sagi%40heiaxis.com&su=Contact%20HEIAxis" target="_blank" rel="noopener noreferrer" aria-label="Email sagi@heiaxis.com (opens Gmail)" class="footer-link text-sm">sagi@heiaxis.com</a>
-    </div>
-    <div class="pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3" style="border-top:1px solid rgba(255,255,255,0.12);">
-      <p class="footer-copy text-xs">&copy; 2026 HEIAxis. All rights reserved.</p>
-      <a href="#" class="footer-copy text-xs">Privacy Policy</a>
-    </div>
-  </div>
-</footer>
 
 <script>
 (function(){
